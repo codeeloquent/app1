@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi, my name is, Ryan, I am working on the Web Development course from Career Foundry.
+Here I am working on the web application portion of the course. I am working to become
+a web developer, which I think is a pretty neat deal.
 
 Things you may want to cover:
 
