@@ -15,23 +15,33 @@ body {
 
 body {
 	position: relative;
-	padding-top: 3em;
+	padding-top: 50px;
 	text-align: center;
 }
 
+//    navbar
+
 .navbar {
-	background-color: #000;
+	background-color: #B00;
 	opacity: .75;
 }
 
-ul {
-	padding: 0.85em 0;
+.navbar-default {
+	background-color: #B00;
 }
 
-ul li {
-	font-size: 18px;
-	margin-right: 0.9em;
+ul {
+	padding-top: 0.1em;
+	padding-right: 1em;
+}
+
+.navbar-default .navbar-nav li a {
+	font-size: 14px;
 	color: #FFF5EE;
+}
+
+.navbar-default .navbar-nav li a:hover {
+	color: #000;
 }
 
 h1 {
@@ -43,6 +53,8 @@ h1 {
 	margin-left: 2em;
 	display: inline;
 }
+
+//Code for a variation of a sticky footer
 
 html {
 	position: relative;
@@ -57,12 +69,12 @@ body {
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
-	height: 25px;
+	height: 50px;
 	width: 100%;
 }
 
 .footer {
-	background-color: #000;
+	background-color: #B00;
 	opacity: .85;
 	font-family: Raleway;
 	font-size: 1em;
