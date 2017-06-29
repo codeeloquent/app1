@@ -10,4 +10,4 @@
 Product.create(name: "Tropical Storm", description: "Easily skids through front part
 	of lane with controlled reaction on difficult and dry lane conditions.", 
 	image_URL: "https://images1.bowlingball.com/images/Product/medium/13294.jpg", 
-	colour: "Blue/Oragne", price: "79.99")
+	colour: "Blue/Orange", price: "79.99")
