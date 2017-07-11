@@ -1,0 +1,12 @@
+<div class="col-sm-2 col-md-4">
+  <h2><%= link_to product.name, product %></h2>
+  <div id="image" align="middle">
+  	<%= image_tag(product.image_URL, class: "img-responsive") %>
+  </div>
+  <h6><%= product.colour %></h6>
+  <p><%= product.description %></p>
+  <strong><%= product.price %></strong><br>
+  <%= link_to 'Show', product %>
+  <%= link_to 'Edit', edit_product_path(product) %>
+  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div> <!-- end /col -->

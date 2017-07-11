@@ -1,5 +1,5 @@
 <h2>Featured Product:</h2>
-
+<hr>
 <!-- Product Carousel -->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
@@ -13,10 +13,10 @@
 	
 	<div class="carousel-inner" role="listbox">
 		<% @products.each do |product| %>
-		<div class="item<%= 'active' if product == @products.first %>">
+		<div class="item<%= " active" if product == @products.first %>" align="middle">
 		  <%= image_tag(product.image_URL) %>
 		  <div class="carousel-caption">
-		  	<%= product.name %>
+		  	<h2><%= product.name %></h2>
 		  </div><!--  end carousel-caption -->
 		</div><!-- end item -->
 		<% end %>
