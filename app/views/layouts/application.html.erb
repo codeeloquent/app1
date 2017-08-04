@@ -27,18 +27,29 @@
           <span class="icon-bar"></span>
         </button>
         <div class="projectName navbar-brand">
-          <%= link_to 'Bowling Pro Shop', products_path %>
-        </div> <!-- end projectName -->
+          <%= link_to 'Bowling Pro Shop', root_path %>
+        </div><!-- end navbar-brand -->
       </div> <!-- end navbar-header -->
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Home', static_pages_landing_page_path %></li>
           <li><%= link_to 'About', static_pages_about_path %></li>
           <li><%= link_to 'Contact', static_pages_contact_path %></li>
-        </ul> 
-      </div>
+          <li><%= link_to 'Login', users_new_path %></li>
+          <li>
+            <!-- Search Box -->
+            <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %> 
+            <div class="form-group">
+              <%= label_tag(:q, "Search for:", class:"hidden") %>
+              <%= text_field_tag(:q, "", type:"text", class:"form-control", placeholder:"Search") %>
+            </div>
+            <%= submit_tag("Search", class:"btn btn-default") %>
+            <% end %>
+          </li>
+        </ul>
+      </div><!-- end navbar-collapse -->
     </nav> <!-- end navbar --> 
-    
+
     <%= yield %>
 
     <hr>

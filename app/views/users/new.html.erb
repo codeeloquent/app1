@@ -1,0 +1,11 @@
+<h1>Login</h1>
+<br>
+<br>
+
+<%= form_with(url: users_new_path, method: 'get') do |form| %>
+  <%= form.label 'Log In' %>
+  <%= form.text_field id: 'login form' %><br><br>
+  <%= form.label 'Password' %>
+  <%= form.text_field id: 'login form' %><br><br>
+  <%= form.submit 'Login', class:"btn btn-default" %>
+<% end %>
