@@ -1,11 +1,10 @@
-<div class="container-fluid">
 <h1>Contact Us</h1>
 
 <%= flash[:notice] %>
-
-<%= form_tag("/static_pages/thank_you") do %>
-  <div style="margin-left: 34.5em;" class="row">
-    <div class="col-md-4">
+<div container>
+  <%= form_tag("/static_pages/thank_you") do %>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-xs-10">
       <div class="form-group">
         <%= label_tag :name %>
         <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
