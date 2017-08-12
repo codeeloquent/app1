@@ -50,9 +50,11 @@
               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             <% else %>
               <%= link_to('Login', new_user_session_path) %>
+              <li>
+                <%= link_to('Sign Up', new_user_registration_path) %>
+              </li>
             <% end %>
           </li>
-          <li><%= link_to('Sign Up', new_user_registration_path) %></li>
         </ul>
       </div><!-- end navbar-collapse -->
     </nav> <!-- end navbar --> 
