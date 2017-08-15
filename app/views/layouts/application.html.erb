@@ -32,7 +32,7 @@
       </div> <!-- end navbar-header -->
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', static_pages_landing_page_path %></li>
+          <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'About', static_pages_about_path %></li>
           <li><%= link_to 'Contact', static_pages_contact_path %></li>
           <li>
@@ -59,7 +59,13 @@
       </div><!-- end navbar-collapse -->
     </nav> <!-- end navbar --> 
 
-    <p class="notice"><%= notice %></p>
+    <!--Flash Notice-->
+    <% if notice %>
+      <div id="notice" class="alert alert-warning"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div id="alert" class="alert alert-danger"><%= alert %></div>
+    <% end %>
 
     <%= yield %>
 
