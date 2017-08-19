@@ -1,31 +1,68 @@
-<% if notice %>
-  <p id="notice" class="alert alert-info"><%= notice %></p>
-<% end %>
+<article class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+  <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <div class="thumbnail">
+  
+        <%= image_tag(@product.image_URL, class: "img-responsive") %>
 
-<p>
-  <strong>Image url:</strong>
-  <%= image_tag(@product.image_URL) %>
-</p>
+        <div class="caption">
+          <h4 style="font-family: Rockwell Standard;">
+            <strong>Name:</strong><br>
+          </h4>
+          <p style="font-family: Lora;"> 
+            <%= @product.name %>
+          </p>
+          
+        <h4 style="font-family: Rockwell Standard;">
+          <strong>Description:</strong>
+        </h4>
+        
+        <p style="font-family: Lora">
+          <%= @product.description %>
+        </p>
 
-<p>
-	<strong>Colour:</strong>
-	<%= @product.colour %>
-</p>
+        <h4 style="font-family: Rockwell Standard">
+	       <strong>Colour:</strong>
+        </h4>
+        <p style="font-family: Lora;">
+	       <%= @product.colour %>
+       </p>
 
-<p>
-	<strong>Price</strong>
-	<%= @product.price %>
-</p>
+        <h4 style="font-family: Rockwell Standard">
+	       <strong>Price</strong>
+        </h4>
+        <p style="font-family: Lora;">
+	       <%= @product.price %>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <hr>
+
+  <h4 style="font-family: Rockwell Standard">
+    Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
+  </h4>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true">
+      <%= link_to 'Edit', edit_product_path(@product) %>
+    </span>
+  </button>
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-triangle-left" aria-hidden="true">
+      <%= link_to 'Back', products_path %>
+    </span>
+  </button>
+
+</article>
