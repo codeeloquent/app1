@@ -29,7 +29,7 @@
         <h4 style="font-family: Rockwell Standard">
 	       <strong>Colour:</strong>
         </h4>
-        <p style="font-family: Lora;">
+        <p style="font-family: Lora; font-weight: bold;">
 	       <%= @product.colour %>
        </p>
 
@@ -39,6 +39,7 @@
         <p style="font-family: Lora;">
 	       <%= @product.price %>
         </p>
+        <p style="font-family: Lora;">Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
         </div>
       </div>
     </div>
@@ -46,14 +47,13 @@
 
   <hr>
 
-  <h4 style="font-family: Rockwell Standard">
-    Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
-  </h4>
+  <%= render 'new_comment' %>
+  
+  <%= render 'comments' %>
+  
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+
   <button type="button" class="btn btn-default">
     <span class="glyphicon glyphicon-pencil" aria-hidden="true">
       <%= link_to 'Edit', edit_product_path(@product) %>
