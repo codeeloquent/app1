@@ -11,7 +11,7 @@ describe ProductsController, type: :controller do
 
   context 'GET #show' do
     it 'renders the show page' do 
-      @product = Product.create!(name: "sample")
+      @product = FactoryGirl.create(:product)
       get :show, params: {id: @product}
       expect(response).to have_http_status(200)
       expect(response).to render_template('show')
@@ -20,11 +20,11 @@ describe ProductsController, type: :controller do
 
   context "POST #create" do
     before do 
-      @user = User.create!(email: "bo@mail.com", password: "boyoho")
+      @user = FactoryGirl.build(:user)
       sign_in @user
     end
     it "successfully creates new product" do  
-      @product = Product.create!(name: "sample")
+      @product = FactoryGirl.create(:product)
       expect(response).to have_http_status(200)
     end
     it "cannot create a product" do 
@@ -34,12 +34,12 @@ describe ProductsController, type: :controller do
 
   context "put #update" do
     before do 
-      @product = Product.create!(name: "sample")
-      @user = User.create!(email: "bo@mail.com", password: "boyoho")
+      @product = FactoryGirl.create(:product)
+      @user = FactoryGirl.build(:user)
       sign_in @user
     end
     it "successfully updates a product" do
-      @update = { name:@product.name, image_url:"images.com", id:@product.id, price:@product.price, colour: "red"}
+      @update = { name: @product.name, image_url:"images.com", id:@product.id, price:@product.price, colour: "red"}
       put :update, params: { id: @product.id, product: @update}
       @product.reload
       expect(@product.colour).to eq "red"
@@ -48,8 +48,8 @@ describe ProductsController, type: :controller do
 
   context "delete" do 
     before do 
-      @product = Product.create!(name: "sample")
-      @user = User.create!(email: "bo@mail.com", password: "boyoho")
+      @product = FactoryGirl.create(:product)
+      @user = FactoryGirl.build(:user)
       sign_in @user
     end
     it "allows admin to delete a product" do 

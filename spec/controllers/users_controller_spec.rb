@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 	before do
-		@user = User.create!(email: 'yo@email.com', password: 'fedcba')
-		@user2 = User.create!(email: 'jo@mail.com', password: 'fdicera')
+		# @user = User.create!(email: 'yo@email.com', password: 'fedcba')
+		@user = FactoryGirl.create(:user)
+		@user2 = FactoryGirl.create(:user)
 	end
 
 	context 'when a user is logged in' do
