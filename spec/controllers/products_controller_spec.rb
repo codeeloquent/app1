@@ -18,16 +18,16 @@ describe ProductsController, type: :controller do
     end
   end
 
-  context "POST #create" do
+  context 'POST #create' do
     before do 
       @user = FactoryGirl.build(:user)
       sign_in @user
     end
-    it "successfully creates new product" do  
+    it 'successfully creates new product' do  
       @product = FactoryGirl.create(:product)
       expect(response).to have_http_status(200)
     end
-    it "cannot create a product" do 
+    it 'cannot create a product' do 
        expect(Product.new(price:nil)).not_to be_valid
     end  
   end
