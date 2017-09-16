@@ -6,15 +6,7 @@ class UserMailer < ApplicationMailer
 			mail(from: email, 
 						to: 'ff.computing@gmail.com',
 						subject: "A new contact form message from #{name}").deliver_now
-	end
-
-	def send_mail
-		@name = params[:name]
-		@email = params[:email]
-		@message = params[:message]
-		UserMailer.contact_form(@email, @name, @message).deliver_now
-		redirect_to contact_path, notice: 'Message sent'
-	end
+	end	
 		
 	def welcome(user)		
 		@appname = "Ten Pin Action Pro Shop"
