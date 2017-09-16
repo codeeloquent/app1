@@ -1,20 +1,14 @@
-<body style="width: 100%;margin: 0;">
-	<table style="width: 100%;background-color: #F4A460;height: 100%;margin: 0 0px;margin-right: 20px;">
-		<tbody>
-			<tr>
-				<td>
-					<p style="color: white;text-align: center;font-weight: 300px;">
-				  	You have received a new contact form message. The contents of the message are:
-					</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p style="color: white;text-align: center;font-weight: 300px;">
-						<%= @message %>
-					</p>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</body>
+<table>
+	<body>
+		<tr>
+			<td>
+				<p>You have received a new contact form message. The contents of the message are:</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p><%= @message %></p>
+			</td>
+		</tr>
+	</body>
+</table>

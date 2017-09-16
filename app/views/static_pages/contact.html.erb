@@ -6,18 +6,18 @@
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
-        <%= form.label :name %>
+        <%= form.label :name, class:"pull-left" %>
         <%= form.text_field :name, class:"form-control", placeholder: "Enter Name", required: true %>
       </div>
       <div class="form-group">
-        <%= form.label :email, "Email Address" %>
+        <%= form.label :email, "Email Address", class:"pull-left" %>
         <%= form.text_field :email, class: "form-control", placeholder: "Enter Email", required: true %>
       </div>
       <div class="form-group">
-        <%= form.label :message %>
+        <%= form.label :message, class:"pull-left" %>
         <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", required: true %>
       </div>
     </div>
   </div>
-  <p style="text-align: left; padding-left: 12em;"><%= form.submit "Send" %></p>
+  <%= form.submit "Send", class:"btn btn-default pull-left" %>
 <% end %>
