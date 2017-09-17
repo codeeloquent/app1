@@ -63,3 +63,5 @@ gem 'devise'
 gem 'cancancan', '~>1.10'
 # will_paginate for paginating
 gem 'will_paginate', '~>3.1.1'
+# Stripe gem for accepting payments
+gem 'stripe'

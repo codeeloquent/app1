@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
 		@message = message
 			mail(from: email, 
 						to: 'ff.computing@gmail.com',
-						subject: "A new contact form message from #{name}").deliver_now
+						subject: "A new contact form message from #{name}").deliver
 	end	
 		
 	def welcome(user)		
@@ -17,6 +17,6 @@ class UserMailer < ApplicationMailer
 		@name = params[:name]
 		@email = params[:email]
 		@message = params[:message]
-		UserMailer.contact_form(@email, @name, @message).deliver_now
+		UserMailer.contact_form(@email, @name, @message).deliver
 	end
 end
