@@ -10,6 +10,10 @@ class PaymentsController < ApplicationController
 			redirect_to new_user_registration_path
 		end
 
+		# Set your secret key: remember to change this to your live secret key in production
+		# See your keys here: https://dashboard.stripe.com/account/apikeys
+		Stripe.api_key = "sk_test_YkONf9lzstwT4mzI7sTp4CNQ"
+
 		token = params[:stripeToken]
 		# Create the charge on Stripe's servers - this will charge the user's card
 		begin
@@ -18,6 +22,7 @@ class PaymentsController < ApplicationController
 				currency: "usd",
 				source: token,
 				descriptoin: params[:stripeEmail]
+				receipt_email: params[:stripeEmail]
 				)
 		if charge.paid
 			order.create(
