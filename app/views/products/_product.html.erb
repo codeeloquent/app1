@@ -1,5 +1,6 @@
 <div class="col-sm-2 col-md-4">
   <h2><%= link_to product.name, product %></h2>
+  <% logger.debug "Product: #{@product.name}" %>
   <div id="image" align="middle">
   	<%= image_tag(product.image_URL, class: "img-responsive") %>
   </div>
