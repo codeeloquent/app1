@@ -1,36 +1,25 @@
 class PaymentsController < ApplicationController
-	before_action :authenticate_user!
 
 	def create
-		@product = Product.find(params[:product_id])
-
-		if user_signed_in?
-			@user = curreent_user
-		else
-			redirect_to new_user_registration_path
-		end
-
-		# Set your secret key: remember to change this to your live secret key in production
-		# See your keys here: https://dashboard.stripe.com/account/apikeys
-		Stripe.api_key = "sk_test_YkONf9lzstwT4mzI7sTp4CNQ"
-
 		token = params[:stripeToken]
+		@product = Product.find(params[:product_id])
+		@user = current_user
+
 		# Create the charge on Stripe's servers - this will charge the user's card
 		begin
 			charge = Stripe::Charge.create(
-				amount: @product.price * 100, # amount in cents, again
-				currency: "usd",
-				source: token,
-				descriptoin: params[:stripeEmail]
-				receipt_email: params[:stripeEmail]
+				:amount => @product.price * 100, # amount in cents, again
+				:currenty => "usd",
+				:source => token,
+				:description => params[:stripeEmail]
 				)
+
 		if charge.paid
 			order.create(
-				user_id: @user_id,
-				product_id: params[:product_id],
-				total: @product.price.to_i
+				:product_id => @prduct_id,
+				:user_id => @user_id,
+				:total => @product.price
 			)
-			flash[:notice] = "Thank you for purchasing #{@product.name}!"
 		end
 
 		rescue Stripe::CardError => e
@@ -40,6 +29,6 @@ class PaymentsController < ApplicationController
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
 
-		redirect_to product_path(@product)
+		redirect_to static_pages_payment_thank_you_path
 	end
 end

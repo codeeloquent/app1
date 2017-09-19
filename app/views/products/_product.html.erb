@@ -1,32 +1,11 @@
 <div class="col-sm-2 col-md-4">
   <h2><%= link_to product.name, product %></h2>
-  <% logger.debug "Product: #{@product.name}" %>
   <div id="image" align="middle">
   	<%= image_tag(product.image_URL, class: "img-responsive") %>
   </div>
   <h6><%= product.colour %></h6>
   <p><%= product.description %></p>
   <strong><%= product.price %></strong><br><br>
-
-  <% if user_signed_in? %>
-    <script
-      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-amount="<%= product.price * 100 %>"
-      data-name="<%= product.name %>"
-      data-description="<%= product.description %>"
-      data-image="<%= image_path(product.image_url) %>"
-      data-locale="auto"
-      data-currency="eur"
-      <% if (current_user != nil)%>
-        data-email = "<%= current_user.email %>"
-      <%end%>
-    >
-    </script>
-    <% else %>
-    <%= link_to "<button class=\"stripe-button-el\"><span style=\"display: block; min-height: 30px;\">Pay with Card</span></button>".html_safe, new_user_session_path, message: "no"%>
-
-  <% end %>
 
   <%= hidden_field_tag(:product_id, product.id) %>
   <br>

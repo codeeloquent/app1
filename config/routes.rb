@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get 'static_pages/index'
+
+  get 'static_pages/payment_thank_you'
   
   root 'static_pages#landing_page'
 
