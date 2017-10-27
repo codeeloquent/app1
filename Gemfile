@@ -65,3 +65,5 @@ gem 'cancancan', '~>1.10'
 gem 'will_paginate', '~>3.1.1'
 # Stripe gem for accepting payments
 gem 'stripe'
+# dalli gem for cache with memcachier
+gem 'dalli'
