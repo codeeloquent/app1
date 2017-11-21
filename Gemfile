@@ -67,3 +67,5 @@ gem 'will_paginate', '~>3.1.1'
 gem 'stripe'
 # dalli gem for cache with memcachier
 gem 'dalli'
+# redis gem for caching
+gem 'redis-rails'

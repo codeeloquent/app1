@@ -11,6 +11,14 @@ class Product < ApplicationRecord
   #  end
   #end
 
+  def views
+  	$redis.get("product:#{id}")
+  end
+
+  def viewed
+  	$redis.incr("product:#{id}")
+  end
+
 	def highest_rating_comment
 		comments.rating_desc.first
 	end

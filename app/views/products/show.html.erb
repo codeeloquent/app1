@@ -10,6 +10,13 @@
         
         <%= image_tag(@product.image_URL, width: "350", class: "img-responsive img-zoom", data_zoom_image: @product.image_URL) %>
 
+        <h6>
+          Views:
+          <span class="badge badge-pill badge-warning">
+            <%= @product.views %>
+          </span>
+        </h6>
+
         <div class="caption">
           <h4 style="font-family: Rockwell Standard;">
             <strong>Name:</strong><br>
