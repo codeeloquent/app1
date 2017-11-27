@@ -3,6 +3,8 @@ class Comment < ApplicationRecord
 	validates :user, presence: true
 	validates :product, presence: true
 	validates :rating, numericality: {only_integer: true}
+	after_create_commit {comment_update_job.perform_later(self, self.user)}
+	
   belongs_to :user
   belongs_to :product
 
