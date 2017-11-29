@@ -1,5 +1,11 @@
 require 'rails_helper'
 
+context "Validation testing" do
+  it "is not valid without name" do
+    epect(product.new(name: nil)).not_to_be_valid
+  end
+end
+
 describe Product do 
 
   context 'when the product has comments' do
@@ -15,6 +21,14 @@ describe Product do
   
   	it "returns the average rating of all comments" do
     	expect(product.average_rating).to eq(3)
+    end
+
+    it "returns the lowest rating comment" do
+      expect(product.lowest_rating_comment.rating).to eq 1
+    end
+
+    it "returns the highest rating comment" do
+      expect(product.highest_rating_comment.rating).to eq 5
     end
  
     it "is not valid without a name" do
