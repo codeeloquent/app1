@@ -2,7 +2,7 @@ require 'rails_helper'
 
 context "Validation testing" do
   it "is not valid without name" do
-    epect(product.new(name: nil)).not_to_be_valid
+    expect(product.new(name: nil)).not_to be_valid
   end
 end
 
